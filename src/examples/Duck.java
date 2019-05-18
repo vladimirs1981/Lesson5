@@ -9,12 +9,30 @@ import javax.sound.sampled.Clip;
 public class Duck {
 
 	private String favoriteFood;
+	private String color;
 	private int lifeExpectancy;
+	public boolean isPoison;
+	private static int numberOfCreations;
 	
 
 	public Duck(String favoriteFood, int lifeExpectancy) {
 		this.favoriteFood = favoriteFood;
 		this.lifeExpectancy = lifeExpectancy;
+
+	}
+
+	public Duck() {
+		
+		 numberOfCreations++;
+		if (numberOfCreations % 2 == 0) {
+			this.color = "white";
+		} else {
+			this.color = "black";
+		}
+	}
+
+	public String getColor() {
+		return this.color;
 	}
 
 	public void waddle() {
@@ -22,11 +40,17 @@ public class Duck {
 		System.out.println("waddle waddle");
 	}
 
+	public static int getNumberOfCreations() {
+		return numberOfCreations;
+	}
+
+	
+
 	@Override
 	public String toString() {
 		return "This duck likes to eat " + this.favoriteFood + " and will live to be " + this.lifeExpectancy + ".";
 	}
-	
+
 	public void quack() {
 		try {
 			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("sounds/quack.wav"));
