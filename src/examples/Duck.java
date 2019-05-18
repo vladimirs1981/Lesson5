@@ -13,7 +13,6 @@ public class Duck {
 	private int lifeExpectancy;
 	public boolean isPoison;
 	private static int numberOfCreations;
-	
 
 	public Duck(String favoriteFood, int lifeExpectancy) {
 		this.favoriteFood = favoriteFood;
@@ -22,8 +21,8 @@ public class Duck {
 	}
 
 	public Duck() {
-		
-		 numberOfCreations++;
+
+		numberOfCreations++;
 		if (numberOfCreations % 2 == 0) {
 			this.color = "white";
 		} else {
@@ -43,8 +42,6 @@ public class Duck {
 	public static int getNumberOfCreations() {
 		return numberOfCreations;
 	}
-
-	
 
 	@Override
 	public String toString() {
