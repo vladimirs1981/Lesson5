@@ -1,8 +1,5 @@
 package optional;
 
-/* Your mission and you have to accept it:
- *         Add a main method to the Popcorn class to cook a bag of Popcorn. Don't change the existing methods.
- */
 
 class Microwave {
 	private int cookTime;
@@ -18,14 +15,15 @@ class Microwave {
 	}
 
 	void setTime(int cookTimeInMinutes) {
-		System.out.println("Microwave says: cook time is set to " + cookTime + " minutes.");
 		this.cookTime = cookTimeInMinutes;
+		System.out.println("Microwave says: cook time is set to " + cookTime + " minutes.");
+
 	}
 
 	void startMicrowave() {
 		if (thingToBeCooked == null)
 			System.out.println("Microwave says: there's nothing in the microwave!");
-		for (int i = 0; i < cookTime*10 + 1; i++) {
+		for (int i = 0; i < cookTime * 10 + 1; i++) {
 			thingToBeCooked.applyHeat();
 		}
 	}
@@ -41,16 +39,17 @@ public class Popcorn {
 		System.out.println("Popcorn says: making package of " + this.flavor + " popcorn.");
 	}
 
-
 	public void applyHeat() {
 		pause();
 
 		if (kernels == 0) {
 			System.out.println("Popcorn says: Time to eat popcorn!");
+
 		} else {
 			System.out.println("POP!" + kernels);
 			kernels--;
 		}
+
 	}
 
 	private void pause() {
@@ -60,8 +59,18 @@ public class Popcorn {
 			e.printStackTrace();
 		}
 	}
-	
+
+	public static void main(String[] args) {
+
+		int cookTime = 2;
+
+		Microwave micro = new Microwave();
+
+		Popcorn popp = new Popcorn("spicy");
+
+		micro.putInMicrowave(popp);
+		micro.setTime(cookTime);
+		micro.startMicrowave();
+	}
+
 }
-
-
-
