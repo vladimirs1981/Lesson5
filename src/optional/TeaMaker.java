@@ -1,8 +1,25 @@
 package optional;
 
+import optional.Kettle.Water;
+
 public class TeaMaker {
 
-	/* Figure out how to make a cup of tea using the classes below */
+	public static void main(String[] args) {
+
+		TeaBag bag = new TeaBag("Passion Fruit");
+
+		Kettle kett = new Kettle();
+
+		kett.boil();
+
+		Cup cup1 = new Cup();
+		Cup cup2 = new Cup();
+		TeaBag bag1 = new TeaBag("Mint");
+
+		cup1.makeTea(bag, kett.getWater());
+		cup2.makeTea(bag1, kett.getWater());
+
+	}
 
 }
 
@@ -61,5 +78,3 @@ class Cup {
 	}
 
 }
-
-
