@@ -30,6 +30,10 @@ public class Duck {
 		}
 	}
 
+	public static void resetCounter() {
+		numberOfCreations = 0;
+	}
+
 	public String getColor() {
 		return this.color;
 	}
