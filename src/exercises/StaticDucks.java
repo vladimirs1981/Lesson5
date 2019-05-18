@@ -13,6 +13,7 @@ public class StaticDucks extends TestCase {
 		assertEquals(3, Duck.getNumberOfCreations());
 		Duck duck4 = new Duck();
 		assertEquals(4, Duck.getNumberOfCreations());
+		duck1.resetCounter();
 	}
 
 	public void testEverySecondDuckIsBlack() throws Exception {
@@ -22,6 +23,7 @@ public class StaticDucks extends TestCase {
 		assertEquals("black", duck1.getColor());
 		assertEquals("white", duck2.getColor());
 		assertEquals("black", duck3.getColor());
+		duck1.resetCounter();
 	}
 //
 //	public void testEveryFourJellyfishArePoisonous() throws Exception {
