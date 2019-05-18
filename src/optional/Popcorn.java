@@ -1,6 +1,5 @@
 package optional;
 
-
 class Microwave {
 	private int cookTime;
 	Popcorn thingToBeCooked;
